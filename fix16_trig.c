@@ -116,7 +116,7 @@ fix16_t fix16_cos(fix16_t inAngle)
 
 fix16_t fix16_tan(fix16_t inAngle)
 {
-#ifndef  FIXMATH_NO_OVERFLOW
+#ifdef FIXMATH_NO_OVERFLOW
 	return fix16_div(fix16_sin(inAngle), fix16_cos(inAngle));
 #else   
 	return fix16_sdiv(fix16_sin(inAngle), fix16_cos(inAngle));

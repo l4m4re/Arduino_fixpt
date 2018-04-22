@@ -59,7 +59,7 @@ the speed of the 'accurate' version with a slightly lower accuracy of ~2.3%.
 #define FIXMATH_OPTIMIZE_8BIT
 #define FIXMATH_NO_CACHE
 #define FIXMATH_NO_OVERFLOW
-#define FIXMATH_NO_ROUNDING
+//#define FIXMATH_NO_ROUNDING
 #define FIXMATH_FAST_SIN
 
 #else
