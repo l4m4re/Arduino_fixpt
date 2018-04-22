@@ -16,7 +16,10 @@ static fix16_t _fix16_atan_cache_value[4096] = { 0 };
 
 fix16_t fix16_sin_parabola(fix16_t inAngle)
 {
-	fix16_t abs_inAngle, abs_retval, retval;
+	fix16_t abs_inAngle, retval;
+    #ifndef FIXMATH_FAST_SIN
+    fix16_t abs_retval;
+    #endif
 	fix16_t mask;
 
 	/* Absolute function */
@@ -113,7 +116,11 @@ fix16_t fix16_cos(fix16_t inAngle)
 
 fix16_t fix16_tan(fix16_t inAngle)
 {
+#ifndef  FIXMATH_NO_OVERFLOW
+	return fix16_div(fix16_sin(inAngle), fix16_cos(inAngle));
+#else   
 	return fix16_sdiv(fix16_sin(inAngle), fix16_cos(inAngle));
+#endif
 }
 
 fix16_t fix16_asin(fix16_t x)
