@@ -45,12 +45,29 @@ the speed of the 'accurate' version with a slightly lower accuracy of ~2.3%.
 
 #if defined(__arm__) 
 
+/* Original for arm based Arduino:
+ *
 //#define FIXMATH_NO_64BIT
 //#define FIXMATH_OPTIMIZE_8BIT
 //#define FIXMATH_NO_CACHE
 #define FIXMATH_NO_OVERFLOW
 //#define FIXMATH_NO_ROUNDING
 #define FIXMATH_FAST_SIN
+ *
+*/
+
+// Configure like AVR for testing on beaglebone:
+
+// AVR Architecture is 8bit & limited in memory
+//#define FIXMATH_NO_64BIT
+#define FIXMATH_OPTIMIZE_8BIT
+#define FIXMATH_NO_CACHE
+#define FIXMATH_NO_OVERFLOW
+//#define FIXMATH_NO_ROUNDING
+#define FIXMATH_FAST_SIN
+
+
+
 
 #elif defined(__AVR__) 
 
