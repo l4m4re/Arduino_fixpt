@@ -16,8 +16,8 @@ CC = gcc
 AS = gcc
 LD = gcc
 AR = ar
-CPP_FLAGS = -O2 $(INC) -Wall -Wextra -c
-CC_FLAGS  = -O2 $(INC) -Wall -Wextra -c
+CPP_FLAGS = -g -O2 $(INC) -Wall -Wextra -c
+CC_FLAGS  = -g -O2 $(INC) -Wall -Wextra -c
 AS_FLAGS  = $(CC_FLAGS) -D_ASSEMBLER_
 LD_FLAGS = -Wall
 
